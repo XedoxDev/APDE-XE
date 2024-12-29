@@ -1,0 +1,194 @@
+v0.5.2-pre2 Alpha
+
+ - Real-time compilation
+   - Your code automatically compiles in the background
+   - Errors and warnings are underlined in your code
+   - The problem overview screen (to the right of the console) shows
+     all errors and warnings found in your code
+   - Improved preprocessor
+ - Improved file selection
+ - Sketches no longer open in split-screen by default
+ - Bug fixes and improvements
+
+Note: Google Play now requires all app updates to target API level 30,
+but doing so breaks the way that APDE currently uses AAPT on
+Android 10+. As a result, v0.5.2 will not be released on Google Play.
+Instead, v0.5.3 is in progress and will feature a new approach for
+running AAPT, among other things.
+
+------------------------------------------------------------------------
+
+v0.5.1 Alpha
+
+ - Preview mode runs sketches without installing them
+   - You must install the APDE Sketch Previewer once, but then you can
+     run sketches without installation indefinitely
+   - Preview mode is available as another target, along with wallpapers,
+     watch faces, and VR
+ - Support for the new Processing sound library
+ - Undo and redo are more accessible
+ - Ability to bypass screen overlay warning
+ - Lots of bug fixes
+
+These changes are driven by GSoC '18.
+
+------------------------------------------------------------------------
+
+v0.5.0 Alpha
+
+ - Run sketches targeting wallpapers, watch faces, and VR!
+   - Change targets by pressing the new button next to the run button
+ - Update to Android mode 4.0
+ - Lots of bug fixes
+
+Notes:
+
+To run watch faces, you must install APDE from the Play Store on your
+Wear OS watch.
+
+VR supports Google Cardboard and Daydream headsets.
+
+These changes are driven by GSoC '18. Special thanks to Sara Di
+Bartolomeo, Andres Colubri, and the Processing Foundation!
+
+------------------------------------------------------------------------
+
+v0.4.1 Alpha
+
+ - Fix most code deletion bugs
+ - Android multi-window support on 7.0+ (Nougat)
+ - Timer-based autosave
+ - Many other bug fixes and improvements
+
+------------------------------------------------------------------------
+
+v0.4.0 Alpha
+
+ - Material design
+ - Android 7.0 (Nougat) build crash fixed
+ - Find in Reference
+ - New temporary sketch model
+ - Faster build times
+ - Processing core sync with Android Mode 3.0.2 (0253)
+ - Processing internals sync with Processing 3.0.1 (0247)
+ - Updated default sketch icons
+ - Lots of bug fixes and smaller improvements
+
+Note: This release drops support for Android 2.3.3 Gingerbread (API
+level 10), which the desktop version has also done. The new minimum
+Android version is Android 4.0.3 Ice Cream Sandwich (API level 15).
+
+------------------------------------------------------------------------
+
+v0.3.3 Alpha
+
+ - Large set of examples (must be downloaded)
+ - Basic Git integration
+ - Find/replace
+ - Support all external storage locations
+ - What's new and about screens
+ - Java 1.6 compiler compliance
+ - AAPT build failure fixed
+ - Library manager crash fixed
+ - Conway example fixed
+ - Lots of other bug fixes
+
+Note: This release adds the permissions INTERNET and 
+ACCESS_NETWORK_STATE that are required for the examples and Git.
+
+------------------------------------------------------------------------
+
+v0.3.2 Alpha
+
+ - Undo/redo
+ - Android 5.0 (Lollipop) support
+ - Console output
+ - Improved build system
+ - Processing core sync with latest version of Android Mode (0232)
+ - Processing internals sync with latest version (3.0a4)
+   - Improved pre-processor and auto formatter
+ - Wizard for changing sketch icon
+ - Support for .JAVA files
+ - DX Dexer tool in Library Manager
+
+------------------------------------------------------------------------
+
+v0.3.1 Alpha
+
+- Export
+   - Android application export
+   - Android project export
+   - Signing key manager
+ - x86, MIPS support
+
+------------------------------------------------------------------------
+
+v0.3.0 Alpha
+
+ - Nested file manager
+   - Library examples
+   - Recent sketches
+ - Tools
+   - Auto Format and Import Library are now tools
+   - Color selector
+ - Improved formatting
+   - Comment/uncomment
+   - Increase/decrease indent
+ - Load external sketches
+
+------------------------------------------------------------------------
+
+v0.2.4 Alpha
+
+ - Support for contributed libraries
+ - Contributed library installer (in Library Manager)
+ - Support for code and code-dex folders in sketch folder
+
+------------------------------------------------------------------------
+
+v0.2.3 Alpha
+
+ - Full support for devices without an external storage
+ - Fragment-based Settings screen
+ - Special character insertion tray
+ - Auto indentation and code block completion
+ - Bugs causing tabs to overwrite each other have been fixed
+
+------------------------------------------------------------------------
+
+v0.2.2 Alpha
+
+ - Auto format
+ - Faster syntax highlighter
+ - Tab key now works
+ - Support for data folder
+ - Fix numerous bugs...
+
+------------------------------------------------------------------------
+
+v0.2.1 Alpha
+
+ - OpenGL support (3D and hardware-accelerated drawing)
+ - Editor bracket matching (( and ), { and }, and [ and ])
+ - Various other bug fixes
+
+------------------------------------------------------------------------
+
+v0.2.0 Alpha
+
+ - Small set of examples
+ - Improved syntax highlighter
+ - Support for Honeycomb and 10" tablets
+
+------------------------------------------------------------------------
+
+v0.1.1 Alpha
+
+ - First release on Google Play
+ - Small bug fixes
+
+------------------------------------------------------------------------
+
+v0.1.0 Alpha
+
+ - Initial release

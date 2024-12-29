@@ -1,0 +1,72 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <androidx.preference.PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="@string/pref_editor">
+
+        <!-- configured in SettingsActivity because androidx is stupid -->
+        <androidx.preference.EditTextPreference
+            android:defaultValue="@string/pref_textsize_default"
+            android:key="textsize"
+            android:title="@string/pref_textsize_title" />
+		
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="syntax_highlight"
+            android:title="@string/pref_syntax_highlight" />
+        
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="override_tab"
+            android:title="@string/pref_override_tab"
+            android:summary="@string/pref_override_tab_desc" />
+    	
+        <androidx.preference.ListPreference
+            android:key="pref_key_autosave_timeout"
+            android:title="@string/pref_autosave_timeout"
+            android:entries="@array/pref_autosave_timeout_entries"
+            android:entryValues="@array/pref_autosave_timeout_values"
+            android:defaultValue="@string/pref_autosave_timeout_default_value" />
+        
+        <!-- We haven't figured this out yet... -->
+        <!-- <Preference
+            android:title="@string/title_activity_character_tray_settings" >
+            
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.calsignlabs.apde.CharacterTraySettingsActivity"
+                android:targetPackage="com.calsignlabs.apde" />
+        </Preference> -->
+        <!-- Use this for now... -->
+        <androidx.preference.Preference
+            android:title="@string/title_activity_character_tray_settings"
+            android:fragment="com.calsignlabs.apde.support.StockPreferenceFragment" >
+            
+            <extra android:name="resource" android:value="pref_character_tray" />
+        </androidx.preference.Preference>
+        
+        <!-- Undo/redo settings -->
+        <androidx.preference.Preference
+            android:title="@string/pref_undo_redo"
+            android:fragment="com.calsignlabs.apde.support.StockPreferenceFragment" >
+            
+            <extra android:name="resource" android:value="pref_undo_redo" />
+        </androidx.preference.Preference>
+    </androidx.preference.PreferenceCategory>
+    
+    <androidx.preference.PreferenceCategory
+        android:key="pref_console"
+        android:title="@string/pref_console" >
+
+        <!-- configured in SettingsActivity because androidx is stupid -->
+        <androidx.preference.EditTextPreference
+            android:defaultValue="@string/pref_textsize_default"
+            android:key="textsize_console"
+            android:title="@string/pref_textsize_title" />
+
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="pref_scroll_lock"
+            android:summary="@string/pref_scroll_lock_desc"
+            android:title="@string/pref_scroll_lock" />
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

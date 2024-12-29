@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".APDE"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/apde_app_title"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".EditorActivity"
+            android:label="@string/apde_app_title"
+            android:theme="@style/FullscreenTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:mimeType="\*/\*" />
+                <data android:pathPattern=".*.pde" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="content" />
+                <data android:host="*" />
+                <data android:mimeType="\*/\*" />
+                <data android:pathPattern=".*.pde" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SketchPropertiesActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_sketch_properties"
+            android:theme="@style/PreferencesTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/PreferencesTheme" />
+        <activity
+            android:name=".LicensesActivity"
+            android:hardwareAccelerated="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/pref_about_licenses"
+            android:theme="@style/PreferencesTheme" />
+        <activity
+            android:name=".PermissionsActivity"
+            android:label="@string/title_activity_permissions"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".CharacterTraySettingsActivity"
+            android:label="@string/title_activity_character_tray_settings"
+            android:theme="@style/PreferencesTheme" />
+        <activity
+            android:name=".LibraryManagerActivity"
+            android:label="@string/title_activity_library_manager"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".vcs.GitHistoryActivity"
+            android:label="@string/git_history"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".ReferenceActivity"
+            android:label="@string/title_activity_reference"
+            android:theme="@style/FullscreenTheme" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.calsignlabs.apde.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths" />
+        </provider>
+    </application>
+
+</manifest>

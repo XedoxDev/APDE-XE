@@ -1,0 +1,13 @@
+<resources>
+	<string name="app_name">APDE Wear Companion</string>
+	<string name="title_activity_companion">APDE Wear Companion</string>
+	<string name="message_default_part1">Run a sketch in APDE with the watchface target.</string>
+	<string name="message_default_part2">The watchface will load if the watch is connected.</string>
+	<!-- We have the option to display different labels for debugging purposes, but we make them all
+	     the same so that it looks prettier. -->
+	<string name="watchface_label_canvas_a">APDE</string>
+	<string name="watchface_label_canvas_b">APDE</string>
+	<string name="watchface_label_gles_a">APDE</string>
+	<string name="watchface_label_gles_b">APDE</string>
+	<string name="watchface_default_message">No watchface loaded.\n\nRun a sketch in APDE \nwith the watchface\ntarget to see it here.</string>
+</resources>

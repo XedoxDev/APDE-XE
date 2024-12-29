@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <androidx.preference.PreferenceCategory
+        android:key="pref_build"
+        android:title="@string/pref_build" >
+        
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="pref_build_internal_storage"
+            android:title="@string/pref_build_internal_storage"
+            android:summary="@string/pref_build_internal_storage_desc" />
+        
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="inject_log_broadcaster"
+            android:title="@string/pref_inject_log_broadcaster"
+            android:summary="@string/pref_inject_log_broadcaster_desc" />
+	
+		<androidx.preference.SwitchPreferenceCompat
+			android:defaultValue="true"
+			android:key="pref_build_check_screen_overlay"
+			android:title="@string/pref_build_check_screen_overlay"
+			android:summary="@string/pref_build_check_screen_overlay_desc" />
+	
+		<!-- TODO modular build is fully disabled for now -->
+<!--		<androidx.preference.Preference-->
+<!--			android:title="@string/pref_build_modular"-->
+<!--			android:fragment="com.calsignlabs.apde.support.StockPreferenceFragment" >-->
+<!--		-->
+<!--			<extra android:name="resource" android:value="pref_build_modular" />-->
+<!--		</androidx.preference.Preference>-->
+    </androidx.preference.PreferenceCategory>
+	
+	<androidx.preference.PreferenceCategory
+		android:key="pref_build_preview"
+		android:title="@string/pref_build_preview" >
+		
+		<androidx.preference.Preference
+			android:key="pref_build_preview_permissions"
+			android:title="@string/pref_build_preview_permissions" />
+		
+		<androidx.preference.Preference
+			android:key="pref_build_preview_reinstall"
+			android:title="@string/pref_build_preview_reinstall" />
+		
+		<androidx.preference.Preference
+			android:key="pref_build_preview_uninstall"
+			android:title="@string/pref_build_preview_uninstall" />
+	</androidx.preference.PreferenceCategory>
+	
+	<androidx.preference.PreferenceCategory
+		android:key="pref_vr"
+		android:title="@string/pref_vr" >
+		
+		<androidx.preference.ListPreference
+			android:key="pref_vr_default_renderer"
+			android:title="@string/pref_vr_default_renderer"
+			android:entries="@array/pref_vr_default_renderer_entries"
+			android:entryValues="@array/pref_vr_default_renderer_entry_values"
+			android:defaultValue="@string/pref_vr_default_renderer_default_value" />
+	</androidx.preference.PreferenceCategory>
+	
+    <androidx.preference.PreferenceCategory
+        android:key="pref_build_debug"
+        android:title="@string/pref_debug" >
+    
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="build_output_verbose"
+            android:title="@string/pref_build_output_verbose" />
+        
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="pref_build_folder_keep"
+            android:title="@string/pref_build_folder_keep" />
+		
+		<!-- Deleted preference: pref_build_aapt_binary (pre-v0.3.3 AAPT binary) -->
+	
+		<androidx.preference.Preference
+			android:key="pref_build_recopy_android_jar"
+			android:title="@string/pref_build_recopy_android_jar" />
+    </androidx.preference.PreferenceCategory>
+</androidx.preference.PreferenceScreen>

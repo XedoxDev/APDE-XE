@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical">
+	
+	<androidx.appcompat.widget.Toolbar
+		android:id="@+id/toolbar"
+		app:popupTheme="@style/ToolbarPopupStyle"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+	
+	<androidx.drawerlayout.widget.DrawerLayout android:id="@+id/drawer"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" >
+		
+		<LinearLayout android:id="@+id/content"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="#FFFFFF"
+			tools:context=".APDE"
+			android:orientation="vertical" >
+			
+			<RelativeLayout
+				android:id="@+id/tab_bar_container"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:orientation="horizontal"
+				android:background="@color/bar_overlay">
+				
+				<LinearLayout
+					android:id="@+id/undo_redo_container"
+					android:layout_width="wrap_content"
+					android:layout_height="48dp"
+					android:orientation="horizontal"
+					android:layout_alignParentRight="true">
+					
+					<View
+						android:id="@+id/tab_undo_redo_separator"
+						android:layout_width="1dp"
+						android:layout_height="fill_parent"
+						android:background="@color/grayed_out"
+						android:layout_marginLeft="3dp"
+						android:layout_marginRight="3dp"
+						android:layout_marginTop="6dp"
+						android:layout_marginBottom="6dp" />
+					
+					<ImageButton
+						android:id="@+id/undo_redo_undo"
+						android:layout_width="48dp"
+						android:layout_height="match_parent"
+						android:layout_gravity="center"
+						android:adjustViewBounds="false"
+						android:scaleType="centerInside"
+						android:contentDescription="@string/editor_menu_undo"
+						android:src="@drawable/ic_undo_white"
+						style="@style/Widget.AppCompat.ActionButton" />
+					
+					<ImageButton
+						android:id="@+id/undo_redo_redo"
+						android:layout_width="48dp"
+						android:layout_height="match_parent"
+						android:layout_gravity="center"
+						android:scaleType="centerInside"
+						android:contentDescription="@string/editor_menu_redo"
+						android:src="@drawable/ic_redo_white"
+						style="@style/Widget.AppCompat.ActionButton" />
+				</LinearLayout>
+				
+				<com.google.android.material.tabs.TabLayout
+					style="@style/CodeTabStrip"
+					android:id="@+id/code_pager_tabs"
+					android:layout_width="match_parent"
+					android:layout_height="48dp"
+					android:layout_toLeftOf="@id/undo_redo_container"
+					android:layout_alignParentLeft="true"
+					app:tabMode="scrollable" />
+			</RelativeLayout>
+			
+			<androidx.viewpager.widget.ViewPager
+				android:id="@+id/code_pager"
+				android:layout_width="match_parent"
+				android:layout_weight="3"
+				android:layout_height="0dp" />
+			
+			<LinearLayout
+				android:id="@+id/buffer"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/back"
+				android:orientation="horizontal">
+				
+				<LinearLayout
+					android:id="@+id/message_char_insert_wrapper"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal">
+					
+					<TextView
+						android:id="@+id/message"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="10dp"
+						android:text=""
+						android:maxLines="100"
+						android:textColor="#000000" />
+					
+					<HorizontalScrollView
+						android:id="@+id/char_insert_tray"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:visibility="gone">
+						
+						<LinearLayout
+							android:id="@+id/char_insert_tray_list"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal" />
+					</HorizontalScrollView>
+				</LinearLayout>
+				
+				<View
+					android:id="@+id/toggle_char_inserts_separator"
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:background="@color/toggle_char_inserts_separator"
+					android:layout_margin="3dp" />
+				
+				<!-- Wrapped in a FrameLayout allows for crossfading -->
+				<FrameLayout
+					android:id="@+id/toggle_wrapper"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:padding="0dp"
+					android:layout_margin="0dp">
+					
+					<ImageButton
+						android:id="@+id/toggle_char_inserts"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:adjustViewBounds="true"
+						android:scaleType="centerInside"
+						android:contentDescription="@string/toggle_char_inserts_accessibility_text"
+						android:src="@drawable/ic_caret_left_black"
+						android:visibility="gone"
+						android:padding="0dp"
+						style="@style/Widget.AppCompat.ActionButton" />
+					
+					<ImageButton
+						android:id="@+id/toggle_problem_overview"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_gravity="center"
+						android:adjustViewBounds="true"
+						android:scaleType="centerInside"
+						android:contentDescription="@string/toggle_problem_overview_accessibility_text"
+						android:src="@drawable/problem_overview_black_unfilled"
+						android:visibility="visible"
+						android:padding="0dp"
+						style="@style/Widget.AppCompat.ActionButton" />
+				</FrameLayout>
+			</LinearLayout>
+			
+			<FrameLayout
+				android:id="@+id/auto_compile_progress_wrapper"
+				android:layout_width="match_parent"
+				android:layout_height="2dp">
+				
+				<ProgressBar
+					android:id="@+id/auto_compile_progress"
+					android:indeterminate="true"
+					android:indeterminateOnly="true"
+					style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+					android:background="@color/message_back"
+					android:layout_width="match_parent"
+					android:layout_height="32dp"
+					android:layout_gravity="center_vertical" />
+				
+				<FrameLayout
+					android:id="@+id/auto_compile_placeholder"
+					android:visibility="gone"
+					android:background="@color/message_back"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent" />
+			</FrameLayout>
+			
+			<LinearLayout
+				android:id="@+id/console_wrapper"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:orientation="horizontal"
+				android:layout_weight="1">
+				
+				<androidx.viewpager.widget.ViewPager
+					android:id="@+id/console_wrapper_pager"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+					
+					<!-- Use ScrollView(s) for smooth scrolling -->
+					<ScrollView android:id="@+id/console_scroller"
+								android:background="@drawable/back_console"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"
+								android:scrollbars="vertical"
+								android:fadeScrollbars="false"
+								android:padding="1dp">
+						
+						<HorizontalScrollView android:id="@+id/console_scroller_x"
+											  android:layout_width="match_parent"
+											  android:layout_height="wrap_content">
+							
+							<TextView android:id="@+id/console"
+									  android:layout_width="wrap_content"
+									  android:layout_height="wrap_content"
+									  android:padding="9dp"
+									  android:textColor="#FFFFFF"
+									  android:textIsSelectable="true"
+									  android:textSize="14sp"
+									  android:fontFamily="monospace"
+									  android:typeface="monospace" />
+						</HorizontalScrollView>
+					</ScrollView>
+					
+					<FrameLayout
+						android:id="@+id/problem_overview_wrapper"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:background="@drawable/back_console"
+						android:padding="1dp">
+						
+						<!-- The list starts out hidden and the empty message visible. This gets
+						     changed as soon as the code is compiled. -->
+						<ListView
+							android:id="@+id/problem_overview_list"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:visibility="gone" />
+						
+						<TextView
+							android:id="@+id/problem_overview_list_empty_message"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/problem_overview_list_empty_message"
+							android:textColor="@android:color/white"
+							android:padding="9dp"
+							android:visibility="visible" />
+					</FrameLayout>
+				</androidx.viewpager.widget.ViewPager>
+			</LinearLayout>
+		</LinearLayout>
+		
+		<RelativeLayout android:id="@+id/drawer_wrapper"
+			android:layout_width="260dp"
+			android:layout_height="match_parent"
+			android:layout_gravity="start" >
+			
+			<ListView android:id="@+id/drawer_list"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_above="@+id/folder_actions"
+				android:choiceMode="singleChoice"
+				android:divider="#CCCCCC"
+				android:dividerHeight="0.5dp"
+				android:background="#EEEEEE"
+				android:headerDividersEnabled="true" />
+			
+			<LinearLayout android:id="@id/folder_actions"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true"
+				android:visibility="gone"
+				android:background="#EEEEEE" >
+				
+				<ImageView android:id="@+id/new_folder"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:src="@drawable/ic_new_black"
+					android:contentDescription="@string/drawer_new_folder"
+					android:background="@color/holo_select_light"
+					android:padding="8dp" />
+				
+				<View android:id="@+id/hover_actions_first_divider"
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:background="#CCCCCC" />
+				
+				<ImageView android:id="@+id/edit_folder"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:src="@drawable/ic_edit_black"
+					android:contentDescription="@string/drawer_edit_folder"
+					android:background="@color/holo_select_light"
+					android:padding="8dp" />
+				
+				<View
+					android:layout_width="1dp"
+					android:layout_height="match_parent"
+					android:background="#CCCCCC" />
+				
+				<ImageView android:id="@+id/delete_folder"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:src="@drawable/ic_delete_black"
+					android:contentDescription="@string/drawer_delete_folder"
+					android:background="@color/red_select_light"
+					android:padding="8dp" />
+			</LinearLayout>
+		</RelativeLayout>
+	</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

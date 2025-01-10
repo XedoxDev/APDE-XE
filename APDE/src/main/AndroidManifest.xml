@@ -13,7 +13,7 @@
     <application
         android:name=".APDE"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_app"
         android:label="@string/apde_app_title"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -21,13 +21,12 @@
         <activity
             android:name=".EditorActivity"
             android:label="@string/apde_app_title"
-            android:theme="@style/FullscreenTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.EDIT" />
@@ -55,24 +54,24 @@
         </activity>
         <activity
             android:name=".SketchPropertiesActivity"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@drawable/ic_app"
             android:label="@string/title_activity_sketch_properties"
             android:theme="@style/PreferencesTheme" />
         <activity
             android:name=".SettingsActivity"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@drawable/ic_app"
             android:label="@string/title_activity_settings"
             android:theme="@style/PreferencesTheme" />
         <activity
             android:name=".LicensesActivity"
             android:hardwareAccelerated="true"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@drawable/ic_app"
             android:label="@string/pref_about_licenses"
             android:theme="@style/PreferencesTheme" />
         <activity
             android:name=".PermissionsActivity"
             android:label="@string/title_activity_permissions"
-            android:theme="@style/FullscreenTheme" />
+        />
         <activity
             android:name=".CharacterTraySettingsActivity"
             android:label="@string/title_activity_character_tray_settings"
@@ -80,15 +79,14 @@
         <activity
             android:name=".LibraryManagerActivity"
             android:label="@string/title_activity_library_manager"
-            android:theme="@style/FullscreenTheme" />
+        />
         <activity
             android:name=".vcs.GitHistoryActivity"
             android:label="@string/git_history"
-            android:theme="@style/FullscreenTheme" />
+        />
         <activity
             android:name=".ReferenceActivity"
-            android:label="@string/title_activity_reference"
-            android:theme="@style/FullscreenTheme" />
+            android:label="@string/title_activity_reference" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.calsignlabs.apde.fileprovider"

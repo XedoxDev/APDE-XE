@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import androidx.appcompat.app.AlertDialog;
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -685,7 +686,7 @@ public class GitRepository {
 	}
 	
 	private View inflateLayout(Context context, int layoutId) {
-		return View.inflate(new ContextThemeWrapper(context, R.style.Theme_AppCompat_Dialog), layoutId, null);
+		return LayoutInflater.from(context).inflate(layoutId, null, false);
 	}
 	
 	private void showLayoutAlert(Activity context, int titleId, View layout, int positiveButtonTitleId, DialogInterface.OnClickListener positiveListener) {

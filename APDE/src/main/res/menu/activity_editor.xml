@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" >
-    
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/menu_run"
         app:actionLayout="@layout/action_run_stop"
         app:showAsAction="ifRoom"
         android:title="@string/editor_menu_run_sketch" />
-	<item
-		android:id="@+id/menu_comp_select"
-		android:icon="@drawable/ic_comp_app"
-		app:showAsAction="ifRoom"
-		android:title="@string/editor_menu_comp_select_app">
-		
-		<menu>
-			<item
-				android:id="@+id/menu_comp_select_preview"
-				android:title="@string/editor_menu_comp_select_preview"
-				android:icon="@drawable/ic_comp_preview" />
-			<item
-				android:id="@+id/menu_comp_select_app"
-				android:title="@string/editor_menu_comp_select_app"
-				android:icon="@drawable/ic_comp_app" />
-			<item
-				android:id="@+id/menu_comp_select_wallpaper"
-				android:title="@string/editor_menu_comp_select_wallpaper"
-				android:icon="@drawable/ic_comp_wallpaper" />
-			<item
-				android:id="@+id/menu_comp_select_watchface"
-				android:title="@string/editor_menu_comp_select_watchface"
-				android:icon="@drawable/ic_comp_watchface" />
-			<item
-				android:id="@+id/menu_comp_select_vr"
-				android:title="@string/editor_menu_comp_select_vr"
-				android:icon="@drawable/ic_comp_vr" />
-		</menu>
-	</item>
+    <item
+        android:id="@+id/menu_comp_select"
+        android:icon="@drawable/ic_comp_app"
+        app:showAsAction="ifRoom"
+        android:title="@string/editor_menu_comp_select_app">
+        <menu>
+            <item
+                android:id="@+id/menu_comp_select_preview"
+                android:title="@string/editor_menu_comp_select_preview"
+                android:icon="@drawable/ic_comp_preview" />
+            <item
+                android:id="@+id/menu_comp_select_app"
+                android:title="@string/editor_menu_comp_select_app"
+                android:icon="@drawable/ic_comp_app" />
+            <item
+                android:id="@+id/menu_comp_select_wallpaper"
+                android:title="@string/editor_menu_comp_select_wallpaper"
+                android:icon="@drawable/ic_comp_wallpaper" />
+            <item
+                android:id="@+id/menu_comp_select_watchface"
+                android:title="@string/editor_menu_comp_select_watchface"
+                android:icon="@drawable/ic_comp_watchface" />
+            <item
+                android:id="@+id/menu_comp_select_vr"
+                android:title="@string/editor_menu_comp_select_vr"
+                android:icon="@drawable/ic_comp_vr" />
+        </menu>
+    </item>
+
     <item
         android:id="@+id/menu_stop"
         android:icon="@drawable/ic_stop_white"
@@ -61,14 +62,14 @@
         android:orderInCategory="100"
         app:showAsAction="never"
         android:title="@string/menu_open_settings" />
-	<item
-		android:id="@+id/menu_new"
-		app:showAsAction="never"
-		android:title="@string/editor_menu_new_sketch" />
-	<item
-		android:id="@+id/menu_load"
-		app:showAsAction="never"
-		android:title="@string/editor_menu_load_sketch" />
+    <item
+        android:id="@+id/menu_new"
+        app:showAsAction="never"
+        android:title="@string/editor_menu_new_sketch" />
+    <item
+        android:id="@+id/menu_load"
+        app:showAsAction="never"
+        android:title="@string/editor_menu_load_sketch" />
     <item
         android:id="@+id/menu_save"
         app:showAsAction="never"
@@ -77,17 +78,18 @@
         android:id="@+id/menu_copy_to_sketchbook"
         app:showAsAction="never"
         android:title="@string/editor_menu_copy_to_sketchbook" />
-	<item
-		android:id="@+id/menu_move_to_sketchbook"
-		app:showAsAction="never"
-		android:title="@string/editor_menu_move_temp_to_sketchbook" />
-	<item
-		android:id="@+id/menu_rename"
-		app:showAsAction="never"
-		android:title="@string/editor_menu_rename_sketch" />
-	<item android:id="@+id/menu_delete"
-		  app:showAsAction="never"
-		  android:title="@string/editor_menu_delete_sketch" />
+    <item
+        android:id="@+id/menu_move_to_sketchbook"
+        app:showAsAction="never"
+        android:title="@string/editor_menu_move_temp_to_sketchbook" />
+    <item
+        android:id="@+id/menu_rename"
+        app:showAsAction="never"
+        android:title="@string/editor_menu_rename_sketch" />
+    <item
+        android:id="@+id/menu_delete"
+        app:showAsAction="never"
+        android:title="@string/editor_menu_delete_sketch" />
     <item
         android:id="@+id/menu_tab_new"
         app:showAsAction="never"

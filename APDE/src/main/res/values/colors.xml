@@ -1,4 +1,5 @@
 <resources>
+    <color name="toolbar_title_color">#ffffff</color>
     <color name="bar_overlay">#31426C</color>
     <color name="bar_overlay_dark">#ff273557</color>
     <color name="current_line">#CCCCCC</color>
@@ -13,14 +14,14 @@
     <color name="holo_select_light">#7733b5e5</color>
     <color name="tab_text_color">#EEEEEE</color>
     <!-- <color name="activity_background">#DDDDDD</color> -->
-    <color name="activity_background">#222222</color>
+    <color name="activity_background">#404040</color>
     <color name="toggle_char_inserts_separator">#666666</color>
     <color name="toggle_char_inserts_separator_light">#CCCCCC</color>
-    <color name="char_insert_button">#222222</color>
+    <color name="char_insert_button">#DDDDDD</color>
     <color name="char_insert_button_light">#CCCCCC</color>
-    <color name="grayed_out">#AAAAAA</color>
-    <color name="light_gray">#EEEEEE</color>
-    <color name="link_color">#CCCCCC</color>
+    <color name="grayed_out">#000000</color>
+    <color name="light_gray">#000000</color>
+    <color name="link_color">#97D8FA</color>
     <color name="code_edit_highlight_color">#97D8FA</color>
     <color name="red_select">#ffBF3C3C</color>
     <color name="red_select_light">#77BF3C3C</color>

@@ -28,6 +28,7 @@ public class Keyword {
 	}
 	
 	public TextPaint paint() {
+        
 		return paint;
 	}
 	

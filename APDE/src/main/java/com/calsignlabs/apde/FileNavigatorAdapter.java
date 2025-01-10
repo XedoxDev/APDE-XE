@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 /**
  * An adapter used for the file browser navigation drawer.
  */
@@ -374,7 +376,7 @@ public class FileNavigatorAdapter extends BaseAdapter {
 	private static void actionNewFolder() {
 		final APDE global = (APDE) context.getApplicationContext();
 		
-		AlertDialog.Builder builder = new AlertDialog.Builder(((APDE) context.getApplicationContext()).getEditor());
+		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(((APDE) context.getApplicationContext()).getEditor());
 		
 		builder.setTitle(R.string.drawer_move_to_new_folder_title);
 		builder.setMessage(R.string.drawer_move_to_new_folder_message);
@@ -433,7 +435,7 @@ public class FileNavigatorAdapter extends BaseAdapter {
 	private static void actionMoveToSketchbook() {
 		final APDE global = (APDE) context.getApplicationContext();
 		
-		AlertDialog.Builder builder = new AlertDialog.Builder(((APDE) context.getApplicationContext()).getEditor());
+		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(((APDE) context.getApplicationContext()).getEditor());
 		
 		builder.setTitle(R.string.move_temp_to_sketchbook_title);
 		builder.setMessage(String.format(Locale.US, context.getResources().getString(R.string.move_temp_to_sketchbook_message), dragItem.getText()));
@@ -469,7 +471,7 @@ public class FileNavigatorAdapter extends BaseAdapter {
 		
 		final APDE global = (APDE) context.getApplicationContext();
 		
-		AlertDialog.Builder builder = new AlertDialog.Builder(((APDE) context.getApplicationContext()).getEditor());
+		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(((APDE) context.getApplicationContext()).getEditor());
 		
 		builder.setTitle(String.format(Locale.US, context.getResources().getString(isSketch ? R.string.rename_sketch_title : R.string.rename_folder_title), dragItem.getText()));
 		builder.setMessage(context.getResources().getString(isSketch ? R.string.rename_sketch_message : R.string.rename_folder_message));
@@ -516,7 +518,7 @@ public class FileNavigatorAdapter extends BaseAdapter {
 		
 		final APDE global = (APDE) context.getApplicationContext();
 		
-		AlertDialog.Builder builder = new AlertDialog.Builder(((APDE) context.getApplicationContext()).getEditor());
+		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(((APDE) context.getApplicationContext()).getEditor());
 		
 		builder.setTitle(String.format(Locale.US, context.getResources().getString(isSketch ? R.string.delete_sketch_dialog_title : R.string.drawer_delete_folder_dialog_title), dragItem.getText()));
 		builder.setMessage(String.format(Locale.US, context.getResources().getString(isSketch ? R.string.delete_sketch_dialog_message : R.string.drawer_delete_folder_dialog_message), dragItem.getText()));
@@ -614,7 +616,7 @@ public class FileNavigatorAdapter extends BaseAdapter {
 	}
 	
 	protected static void showDialog(String title, String message, Activity activityContext) {
-		AlertDialog.Builder builder = new AlertDialog.Builder(activityContext);
+		MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(activityContext);
 		
 		builder.setTitle(title);
 		builder.setMessage(message);

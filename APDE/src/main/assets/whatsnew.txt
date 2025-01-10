@@ -1,3 +1,10 @@
+v0.5.3
+
+ - Add translate on russion language 
+ - Update to AndroidMode v4.6.1
+
+------------------------------------------------------------------------
+
 v0.5.2-pre2 Alpha
 
  - Real-time compilation
